@@ -1,7 +1,10 @@
-
 import { ArrowRight, ArrowLeft, ExternalLink } from "lucide-react";
+import { useState } from "react";
+import ProjectShowcase from "./ProjectShowcase";
 
 const Portfolio = () => {
+  const [showAllProjects, setShowAllProjects] = useState(false);
+
   const portfolioItems = [
     {
       title: "YouTube Content Creation",
@@ -41,6 +44,10 @@ const Portfolio = () => {
     }
   ];
 
+  if (showAllProjects) {
+    return <ProjectShowcase onBack={() => setShowAllProjects(false)} />;
+  }
+
   return (
     <section className="py-20 px-6 bg-gray-50" id="portfolio">
       <div className="max-w-6xl mx-auto">
@@ -53,7 +60,11 @@ const Portfolio = () => {
               Explore my latest design projects across various industries and platforms
             </p>
           </div>
-          <button className="bg-orange-500 text-white px-6 py-3 rounded-full flex items-center gap-2 hover:bg-orange-600 transition-all duration-300 hover:scale-105 hover:shadow-lg animate-fade-in" style={{animationDelay: '0.2s'}}>
+          <button 
+            onClick={() => setShowAllProjects(true)}
+            className="bg-orange-500 text-white px-6 py-3 rounded-full flex items-center gap-2 hover:bg-orange-600 transition-all duration-300 hover:scale-105 hover:shadow-lg animate-fade-in" 
+            style={{animationDelay: '0.2s'}}
+          >
             View All Work <ArrowRight className="w-5 h-5" />
           </button>
         </div>
