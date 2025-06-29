@@ -1,19 +1,13 @@
-
 import { ArrowLeft, ArrowRight } from "lucide-react";
-
 const Testimonials = () => {
-  const testimonials = [
-    {
-      rating: 5,
-      text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas",
-      author: "Henry, Arthur",
-      position: "CEO, Food Express",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face"
-    }
-  ];
-
-  return (
-    <section className="py-20 px-6 bg-gray-900">
+  const testimonials = [{
+    rating: 5,
+    text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas",
+    author: "Henry, Arthur",
+    position: "CEO, Food Express",
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face"
+  }];
+  return <section className="py-20 px-6 bg-gray-900">
       <div className="max-w-6xl mx-auto text-center">
         <div className="mb-4 flex items-center justify-center gap-2">
           <div className="w-8 h-8 border-2 border-white rounded transform rotate-45"></div>
@@ -34,9 +28,7 @@ const Testimonials = () => {
           {/* Left testimonial - partial */}
           <div className="bg-gray-800 p-8 rounded-3xl opacity-50">
             <div className="flex mb-4">
-              {[...Array(5)].map((_, i) => (
-                <span key={i} className="text-orange-500 text-xl">★</span>
-              ))}
+              {[...Array(5)].map((_, i) => <span key={i} className="text-orange-500 text-xl">★</span>)}
               <span className="text-white ml-2 font-bold">5.0</span>
             </div>
             <p className="text-gray-400 text-left mb-6">
@@ -47,20 +39,14 @@ const Testimonials = () => {
           {/* Center testimonial - main */}
           <div className="bg-gray-800 p-8 rounded-3xl relative">
             <div className="flex mb-4">
-              {[...Array(5)].map((_, i) => (
-                <span key={i} className="text-orange-500 text-xl">★</span>
-              ))}
+              {[...Array(5)].map((_, i) => <span key={i} className="text-orange-500 text-xl">★</span>)}
               <span className="text-white ml-2 font-bold">5.0</span>
             </div>
             <p className="text-gray-300 text-left mb-6">
               {testimonials[0].text}
             </p>
             <div className="flex items-center">
-              <img 
-                src={testimonials[0].avatar}
-                alt={testimonials[0].author}
-                className="w-12 h-12 rounded-full mr-4"
-              />
+              <img src={testimonials[0].avatar} alt={testimonials[0].author} className="w-12 h-12 rounded-full mr-4" />
               <div className="text-left">
                 <div className="text-white font-semibold">{testimonials[0].author}</div>
                 <div className="text-gray-400 text-sm">{testimonials[0].position}</div>
@@ -72,20 +58,14 @@ const Testimonials = () => {
           {/* Right testimonial - partial */}
           <div className="bg-gray-800 p-8 rounded-3xl opacity-50">
             <div className="flex mb-4">
-              {[...Array(5)].map((_, i) => (
-                <span key={i} className="text-orange-500 text-xl">★</span>
-              ))}
+              {[...Array(5)].map((_, i) => <span key={i} className="text-orange-500 text-xl">★</span>)}
               <span className="text-white ml-2 font-bold">5.0</span>
             </div>
             <p className="text-gray-400 text-left mb-6">
               Sed ut perspiciatis unde omn doloremque laudantium, tota veritatis et quasi architecto b voluptatem quia voluptas
             </p>
             <div className="flex items-center">
-              <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face"
-                alt="Joshua Arthur"
-                className="w-12 h-12 rounded-full mr-4"
-              />
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" alt="Joshua Arthur" className="w-12 h-12 rounded-full mr-4" />
               <div className="text-left">
                 <div className="text-white font-semibold">Joshua, Arthur</div>
                 <div className="text-gray-400 text-sm">CTO, EV Charger</div>
@@ -94,17 +74,8 @@ const Testimonials = () => {
           </div>
         </div>
         
-        <div className="flex justify-center gap-4">
-          <button className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors">
-            <ArrowLeft className="w-6 h-6 text-white" />
-          </button>
-          <button className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors">
-            <ArrowRight className="w-6 h-6 text-white" />
-          </button>
-        </div>
+        
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Testimonials;
