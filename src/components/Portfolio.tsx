@@ -6,26 +6,38 @@ const Portfolio = () => {
     {
       title: "YouTube Content Creation",
       category: "Social Media Design",
-      image: "/lovable-uploads/25e64b86-f93b-4ac7-9b2e-2ae18ed13893.png",
+      image: "/lovable-uploads/24d64409-fab5-4b2d-9aa6-a031a2d0a4cb.png",
       description: "Engaging YouTube thumbnails and channel graphics that drive views and subscriptions."
     },
     {
-      title: "Food Brand Identity",
-      category: "Restaurant Branding",
-      image: "/lovable-uploads/912841cc-8a24-4a8c-bd82-def6f91f1db7.png",
-      description: "Complete pizza brand identity including logos, posters, and promotional materials."
+      title: "Brand Identity Design",
+      category: "Logo & Branding",
+      image: "/lovable-uploads/aa5ed241-32cb-4a88-88c6-268d199aacb2.png",
+      description: "Complete brand identity including logos, typography, and visual elements."
     },
     {
-      title: "Political Campaign Design",
-      category: "Campaign Materials",
-      image: "/lovable-uploads/ccf437d5-938f-4bc1-aec6-58d140663587.png",
-      description: "Professional campaign graphics and promotional content for political candidates."
+      title: "Event Poster Design",
+      category: "Event Marketing",
+      image: "/lovable-uploads/5e9f0b4d-d0bd-4ba6-857d-2514801758da.png",
+      description: "Professional event posters and promotional materials for various occasions."
     },
     {
-      title: "Social Media Carousels",
+      title: "Social Media Marketing",
       category: "Instagram Content",
-      image: "/lovable-uploads/7b2c535a-bd57-46c5-b91a-51abf679abaa.png",
-      description: "Beautiful carousel designs for social media engagement and storytelling."
+      image: "/lovable-uploads/2b168822-fae8-44f2-8b52-1c94db020d85.png",
+      description: "Beautiful social media posts and marketing materials for businesses."
+    },
+    {
+      title: "Book Cover Design",
+      category: "Publishing Design",
+      image: "/lovable-uploads/5344a212-14b5-458c-a715-170463af223f.png",
+      description: "Compelling book covers that capture the essence of the story."
+    },
+    {
+      title: "Business Communications",
+      category: "Corporate Design",
+      image: "/lovable-uploads/26932d4c-aee1-4b38-b62a-dabccf3a6387.png",
+      description: "Professional thank you cards and business communication materials."
     }
   ];
 
@@ -34,10 +46,10 @@ const Portfolio = () => {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-12 gap-6">
           <div className="animate-fade-in">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
               Featured <span className="text-orange-500">Portfolio</span>
             </h2>
-            <p className="text-gray-600 max-w-lg">
+            <p className="text-gray-600 max-w-lg text-base md:text-lg">
               Explore my latest design projects across various industries and platforms
             </p>
           </div>
@@ -46,15 +58,15 @@ const Portfolio = () => {
           </button>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8 mb-12">
           {portfolioItems.map((item, index) => (
             <div key={index} className={`group cursor-pointer animate-fade-in`} style={{animationDelay: `${index * 0.1}s`}}>
-              <div className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <div className="bg-white rounded-3xl p-4 md:p-6 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                 <div className="bg-gray-100 rounded-2xl overflow-hidden mb-6 group-hover:scale-105 transition-transform duration-300">
                   <img 
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-64 object-cover"
+                    className="w-full h-48 md:h-64 object-cover"
                   />
                 </div>
                 <div className="flex items-start justify-between mb-4">
@@ -62,7 +74,7 @@ const Portfolio = () => {
                     <span className="inline-block px-3 py-1 bg-orange-100 text-orange-600 text-sm font-medium rounded-full mb-2">
                       {item.category}
                     </span>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                    <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
                   </div>
                   <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110">

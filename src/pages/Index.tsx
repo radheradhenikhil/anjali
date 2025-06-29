@@ -8,10 +8,12 @@ import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
+import CursorEffect from "@/components/CursorEffect";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-white">
+      <CursorEffect />
       <Navigation />
       <Hero />
       <About />
