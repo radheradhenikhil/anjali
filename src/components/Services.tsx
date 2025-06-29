@@ -4,68 +4,101 @@ import { ArrowRight } from "lucide-react";
 const Services = () => {
   const services = [
     {
+      title: "YouTube Thumbnails",
+      description: "Eye-catching thumbnails that boost click-through rates",
+      image: "/lovable-uploads/25e64b86-f93b-4ac7-9b2e-2ae18ed13893.png",
+      highlight: true,
+      category: "Social Media"
+    },
+    {
+      title: "Logo Design", 
+      description: "Professional brand identities that make lasting impressions",
+      image: "/lovable-uploads/679a776f-f5f5-4fc0-83a2-3c767cd11bce.png",
+      highlight: false,
+      category: "Branding"
+    },
+    {
+      title: "Food Posters",
+      description: "Appetizing designs for restaurants and food businesses", 
+      image: "/lovable-uploads/912841cc-8a24-4a8c-bd82-def6f91f1db7.png",
+      highlight: false,
+      category: "Marketing"
+    },
+    {
+      title: "Social Media Carousels",
+      description: "Engaging multi-slide content for Instagram and LinkedIn",
+      image: "/lovable-uploads/7b2c535a-bd57-46c5-b91a-51abf679abaa.png",
+      highlight: false,
+      category: "Social Media"
+    },
+    {
+      title: "Political Campaign Design",
+      description: "Professional campaign materials and promotional content",
+      image: "/lovable-uploads/ccf437d5-938f-4bc1-aec6-58d140663587.png",
+      highlight: false,
+      category: "Campaign"
+    },
+    {
       title: "UI/UX Design",
-      description: "Creating intuitive and engaging user experiences",
+      description: "User-friendly interfaces and seamless user experiences",
       image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop",
-      highlight: false
-    },
-    {
-      title: "Web Design", 
-      description: "Modern and responsive website designs",
-      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop",
-      highlight: true
-    },
-    {
-      title: "Landing Page",
-      description: "High-converting landing pages that drive results", 
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
-      highlight: false
+      highlight: true,
+      category: "Digital"
     }
   ];
 
   return (
-    <section className="py-20 px-6 bg-gray-900">
+    <section className="py-20 px-6 bg-gray-900" id="services">
       <div className="max-w-6xl mx-auto">
-        <div className="flex justify-between items-center mb-12">
-          <div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-              My <span className="text-orange-500">Services</span>
-            </h2>
-            <p className="text-gray-400 max-w-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            </p>
-          </div>
+        <div className="text-center mb-12 animate-fade-in">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+            My Design <span className="text-orange-500">Services</span>
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            From concept to creation, I offer comprehensive design solutions tailored to your needs
+          </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div 
               key={index}
-              className={`relative rounded-3xl overflow-hidden group cursor-pointer transition-transform duration-300 hover:scale-105 ${
+              className={`relative rounded-3xl overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in ${
                 service.highlight ? 'bg-orange-500' : 'bg-gray-800'
               }`}
+              style={{animationDelay: `${index * 0.1}s`}}
             >
-              <div className="p-8 pb-4">
-                <h3 className={`text-2xl font-bold mb-4 ${
+              <div className="p-6 pb-4">
+                <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 ${
+                  service.highlight ? 'bg-white/20 text-white' : 'bg-orange-500/20 text-orange-400'
+                }`}>
+                  {service.category}
+                </div>
+                <h3 className={`text-xl font-bold mb-3 ${
                   service.highlight ? 'text-white' : 'text-white'
                 }`}>
                   {service.title}
                 </h3>
+                <p className={`text-sm mb-4 ${
+                  service.highlight ? 'text-white/80' : 'text-gray-300'
+                }`}>
+                  {service.description}
+                </p>
               </div>
               
-              <div className="px-8 pb-8">
-                <div className="bg-gray-200 rounded-2xl overflow-hidden mb-6">
+              <div className="px-6 pb-6">
+                <div className="bg-gray-200 rounded-2xl overflow-hidden mb-6 group-hover:scale-105 transition-transform duration-300">
                   <img 
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-48 object-cover"
+                    className="w-full h-40 object-cover"
                   />
                 </div>
                 
-                <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
-                  service.highlight ? 'bg-white' : 'bg-gray-700'
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${
+                  service.highlight ? 'bg-white' : 'bg-gray-700 group-hover:bg-orange-500'
                 }`}>
-                  <ArrowRight className={`w-6 h-6 ${
+                  <ArrowRight className={`w-5 h-5 transition-colors duration-300 ${
                     service.highlight ? 'text-orange-500' : 'text-white'
                   }`} />
                 </div>
